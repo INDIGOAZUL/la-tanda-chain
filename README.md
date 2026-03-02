@@ -142,7 +142,7 @@ We're allocating rewards from the 40M LTD staking pool (20% of total supply) to 
 | **Infrastructure** | Public RPC, snapshots, or state sync | 5,000 LTD | 5 |
 | **Bug Reporter** | Valid chain/consensus bugs | 100-1,000 LTD | Open |
 
-Testnet LTD for validator staking (50K self-stake) is available by request — join [Discord](https://discord.gg/latanda) or [Telegram](https://t.me/latandahn) to register your node and get started.
+Testnet LTD for validator staking (50K self-stake) is available by request — join [Discord](https://discord.gg/Ve9M2ZSYC2) or [Telegram](https://t.me/latandahn) to register your node and get started.
 
 ## About La Tanda
 
@@ -152,7 +152,7 @@ La Tanda is a live fintech platform in Honduras — tandas (ROSCAs), marketplace
 
 ## Community
 
-- **Discord:** https://discord.gg/latanda
+- **Discord:** https://discord.gg/Ve9M2ZSYC2
 - **Telegram:** https://t.me/latandahn
 - **Twitter:** https://twitter.com/TandaWeb3
 - **Email:** contact@latanda.online
