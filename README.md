@@ -1,5 +1,11 @@
 # La Tanda Chain
 
+[![Cosmos SDK](https://img.shields.io/badge/Cosmos%20SDK-v0.53.6-blue?logo=cosmos)](https://docs.cosmos.network)
+[![CometBFT](https://img.shields.io/badge/CometBFT-consensus-purple)](https://cometbft.com/)
+[![Testnet](https://img.shields.io/badge/testnet-live-brightgreen)](#testnet-en-vivo)
+[![Go](https://img.shields.io/badge/Go-1.24+-00ADD8?logo=go&logoColor=white)](https://go.dev/)
+[![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-red)](#license)
+
 Blockchain soberana para servicios financieros descentralizados en Latinoamérica, construida con [Cosmos SDK](https://docs.cosmos.network) v0.53.6 y consenso [CometBFT](https://cometbft.com/).
 
 ## Testnet en Vivo
@@ -125,24 +131,24 @@ latandad query staking validators
 latandad tx bank send <from> <to> <amount>ultd --chain-id latanda-testnet-1
 ```
 
-## Incentivized Testnet
+## Incentivized Testnet (March-June 2026)
 
-We're running an incentivized testnet program (March-June 2026) with LTD rewards for node operators, validators, and infrastructure partners. See [Incentivized Testnet Program](https://latanda.online/chain/) for details.
+We're allocating rewards from the 40M LTD staking pool (20% of total supply) to early participants:
+
+| Tier | Requirement | Reward | Slots |
+|------|------------|--------|-------|
+| **Full Node** | Run synced node 30+ days, 95% uptime | 500 LTD | 20 |
+| **Validator** | Full node → validator promotion, 95% uptime | 2,000 LTD | 10 |
+| **Infrastructure** | Public RPC, snapshots, or state sync | 5,000 LTD | 5 |
+| **Bug Reporter** | Valid chain/consensus bugs | 100-1,000 LTD | Open |
+
+Testnet LTD for validator staking (50K self-stake) is available by request — join [Discord](https://discord.gg/latanda) or [Telegram](https://t.me/latandahn) to register your node and get started.
 
 ## About La Tanda
 
-La Tanda is a live fintech platform serving users in Honduras with:
-- **Tandas** (ROSCAs) — rotating savings groups
-- **Marketplace** — peer-to-peer services and products
-- **Lottery** — community lottery system
-- **AI Assistant** (MIA) — financial guidance
+La Tanda is a live fintech platform in Honduras — tandas (ROSCAs), marketplace, lottery, and AI assistant — with 140+ API endpoints serving real users. The chain migrates core financial logic to native Cosmos modules.
 
-The chain migrates core financial logic to native Cosmos modules (`x/tanda`, `x/mercado`, `x/loteria`, `x/ltd`, `x/mineria`, `x/gobernanza`).
-
-- **Platform:** https://latanda.online
-- **Whitepaper:** https://latanda.online/whitepaper.html
-- **API Docs:** https://latanda.online/docs
-- **Dev Portal:** https://latanda.online/dev-dashboard.html
+[Platform](https://latanda.online) · [Whitepaper](https://latanda.online/whitepaper.html) · [API Docs](https://latanda.online/docs) · [Dev Portal](https://latanda.online/dev-dashboard.html)
 
 ## Community
 
@@ -153,4 +159,4 @@ The chain migrates core financial logic to native Cosmos modules (`x/tanda`, `x/
 
 ## License
 
-Copyright 2026 Ray-Banks LLC. All rights reserved.
+See [LICENSE](LICENSE).
