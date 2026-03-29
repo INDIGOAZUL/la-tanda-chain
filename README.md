@@ -10,7 +10,7 @@ Blockchain soberana para servicios financieros descentralizados en Latinoaméric
 
 ## Testnet en Vivo
 
-El nodo génesis está produciendo bloques. Buscamos operadores de nodos y validadores.
+7+ validadores activos, testnet incentivado en progreso. Buscamos operadores de nodos y validadores.
 
 ```bash
 # One-line install (Ubuntu 22.04+)
@@ -27,7 +27,7 @@ wget -q https://latanda.online/chain/node-setup.sh -O node-setup.sh && chmod +x 
 | **Total supply** | 200,000,000 LTD (fixed, 0% inflation) |
 | **Token denom** | `ultd` (1 LTD = 1,000,000 ultd) |
 | **Address prefix** | `ltd` |
-| **Min validator stake** | 50,000 LTD |
+| **Min self-delegation** | 1 LTD (testnet — delegation from project) |
 | **Binary** | `latandad` |
 
 ## Endpoints
@@ -96,21 +96,38 @@ latandad status | jq '.sync_info.catching_up'
 
 After your node is synced:
 
+1. Join [Discord](https://discord.gg/Ve9M2ZSYC2) and share your sync status
+2. We'll send you LTD for gas + validator creation
+3. Create your validator using the JSON method:
+
 ```bash
-# Create validator (requires 50K LTD — request testnet tokens in Discord)
-latandad tx staking create-validator \
-  --amount 50000000000ultd \
-  --pubkey $(latandad tendermint show-validator) \
-  --moniker "your-moniker" \
+# Create validator.json
+cat > validator.json << 'EOF'
+{
+  "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"YOUR_PUBKEY_HERE"},
+  "amount": "1000000ultd",
+  "moniker": "your-moniker",
+  "commission-rate": "0.10",
+  "commission-max-rate": "0.20",
+  "commission-max-change-rate": "0.01",
+  "min-self-delegation": "1"
+}
+EOF
+
+# Get your pubkey
+latandad tendermint show-validator
+
+# Submit (replace YOUR_KEY with your key name)
+latandad tx staking create-validator validator.json \
+  --from YOUR_KEY \
+  --keyring-backend test \
   --chain-id latanda-testnet-1 \
-  --commission-rate 0.10 \
-  --commission-max-rate 0.20 \
-  --commission-max-change-rate 0.01 \
-  --min-self-delegation 1 \
-  --from your-key-name \
   --gas auto \
-  --gas-adjustment 1.5
+  --gas-adjustment 1.5 \
+  --fees 500ultd
 ```
+
+4. Once active, we'll delegate from the genesis wallet to give you voting power
 
 ## Useful Commands
 
@@ -133,16 +150,16 @@ latandad tx bank send <from> <to> <amount>ultd --chain-id latanda-testnet-1
 
 ## Incentivized Testnet (March-June 2026)
 
-We're allocating rewards from the 40M LTD staking pool (20% of total supply) to early participants:
+Validators receive delegation from the project's genesis wallet during testnet. Self-delegation is minimal (1 LTD) — the project delegates voting power to active validators.
 
-| Tier | Requirement | Reward | Slots |
-|------|------------|--------|-------|
-| **Full Node** | Run synced node 30+ days, 95% uptime | 500 LTD | 20 |
-| **Validator** | Full node → validator promotion, 95% uptime | 2,000 LTD | 10 |
-| **Infrastructure** | Public RPC, snapshots, or state sync | 5,000 LTD | 5 |
+| Tier | Requirement | Delegation | Slots |
+|------|------------|------------|-------|
+| **Full Node** | Run synced node, 95% uptime | 500 LTD | 20 |
+| **Validator** | Full node + create validator, 95% uptime | 2,000 LTD | 10 |
+| **Infra Partner** | Validator + public RPC/API, explorer, statesync, or guides | 5,000 LTD | 5 |
 | **Bug Reporter** | Valid chain/consensus bugs | 100-1,000 LTD | Open |
 
-Testnet LTD for validator staking (50K self-stake) is available by request — join [Discord](https://discord.gg/Ve9M2ZSYC2) or [Telegram](https://t.me/latandahn) to register your node and get started.
+Join [Discord](https://discord.gg/Ve9M2ZSYC2) or [Telegram](https://t.me/latandahn) to register your node and get started.
 
 ## About La Tanda
 
