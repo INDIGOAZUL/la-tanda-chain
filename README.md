@@ -148,7 +148,7 @@ latandad query staking validators
 latandad tx bank send <from> <to> <amount>ultd --chain-id latanda-testnet-1
 ```
 
-## Incentivized Testnet (March-June 2026)
+## Incentivized Testnet (2026 — Mainnet target Q1-Q2 2027)
 
 Validators receive delegation from the project's genesis wallet during testnet. Self-delegation is minimal (1 LTD) — the project delegates voting power to active validators.
 
