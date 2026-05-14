@@ -4,7 +4,7 @@
 [![CometBFT](https://img.shields.io/badge/CometBFT-consensus-purple)](https://cometbft.com/)
 [![Testnet](https://img.shields.io/badge/testnet-live-brightgreen)](#testnet-en-vivo)
 [![Go](https://img.shields.io/badge/Go-1.24+-00ADD8?logo=go&logoColor=white)](https://go.dev/)
-[![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-red)](#license)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue)](LICENSE)
 
 Blockchain soberana para servicios financieros descentralizados en Latinoamérica, construida con [Cosmos SDK](https://docs.cosmos.network) v0.53.6 y consenso [CometBFT](https://cometbft.com/).
 
